@@ -38,7 +38,7 @@ class GPS:
             'score': self.saveCols('score'),
             'date': self.saveCols('at')
         })
-        df.to_csv('Text_preProcess/data/ark_reviews_playstore.csv', index=False, encoding='utf-8-sig');
+        df.to_csv('02_text_preprocess/data/ark_reviews_playstore.csv', index=False, encoding='utf-8-sig');
 
 def main():
     APP_ID: str = 'com.studiowildcard.arkuse';
