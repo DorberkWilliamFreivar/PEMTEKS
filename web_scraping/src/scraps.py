@@ -81,7 +81,7 @@ class WEB:
         ]);
         new_cols_country = NEW_DATASET["country_id"].map(self.DICT_COUNTRY);
         NEW_DATASET.insert(2, "country_name", new_cols_country);
-        NEW_DATASET.to_csv("Web_Scraping/sweater_weather.csv", index=False);
+        NEW_DATASET.to_csv("web_scraping/data/sweater_weather.csv", index=False);
 
 class DATASET:
     def __init__(self, PATH: str):
@@ -114,7 +114,7 @@ class DATASET:
         return dataList;
 
 def GET_DATA_CITY_LAT_LOT() -> list:
-    filepath: str = "Web_Scraping/worldcities.csv";
+    filepath: str = "web_Scraping/data/worldcities.csv";
     DF = DATASET(filepath);
     randIdx: list = DF.randomIndexRow(1000); # i limit for 1000 request (1000 city), this searching for random city of lat and lot
     dataLat: list = DF.getRandomDataIndexColumn('lat', randIdx);

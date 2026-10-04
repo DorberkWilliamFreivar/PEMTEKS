@@ -27,7 +27,7 @@ class DF_TEXT_RAW:
 
         print("Initate of modul or clases neded from libs");
         self.html_pattern = re.compile('<.*?>');
-        another_sw = {'nya', 'game'};
+        another_sw = {'nya', 'game', 'main', 'download', 'yg', 'gk', 'mainnya', 'gak', 'gamenya'};
         self.sw = set(stopwords.words('indonesian'));
         self.sw = self.sw.union(another_sw);
         self.lemmatizer = Lemmatizer();
@@ -114,7 +114,7 @@ class DF_TEXT_RAW:
 def main():
     global PATH;
     importAllLibs(); # WAREG LIBRARRYS
-    PATH = "Text_preProcess/";
+    PATH = "text_preprocess/data/";
     DF_RAW = PATH + "ark_reviews_playstore.csv";
     FILENAME_O = PATH + "ark_reviews_playstore_preprocess.csv"
     TEXT = DF_TEXT_RAW(DF_RAW);
