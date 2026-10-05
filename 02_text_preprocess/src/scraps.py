@@ -25,9 +25,9 @@ class GPS:
             col_str: str = dict[key];
             if key == 'at':
                 col_str: str = dict[key].strftime("%Y-%m-%d %H:%M:%S");
-                col_str: str = f"""{col_str}""";
             elif key == 'content':
                 col_str: str = str(dict[key]).replace('\n', '').replace('\r', '');
+                col_str: str = f"""{col_str}""";
             list_cols.append(col_str);
         return list_cols;
 
