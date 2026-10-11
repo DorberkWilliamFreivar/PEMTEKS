@@ -1,0 +1,4 @@
+03_featuree_engineering/data/csv_tfidf.csv
+03_featuree_engineering/data/csv_bow.csv
+03_featuree_engineering/data/csv_onehot.csv
+03_featuree_engineering/models/reviews_ark.fasttext.wv.vectors_ngrams.npy
