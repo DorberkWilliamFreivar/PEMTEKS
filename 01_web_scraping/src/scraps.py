@@ -124,7 +124,7 @@ def GET_DATA_CITY_LAT_LOT() -> list:
     return dataLat, dataLong, dicts_country;
 
 def GET_DATA_WEATHER_API(LATs: list, LONGs: list, dictCountry: dict):
-    API_key = "8b36ca2b82f435637f2b70ac338185f7"; # pls dont use my api
+    API_key = "AP_KEY_ANATA"; # pls dont use my api
     url_api = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=metric";
   
     WEEB = WEB(API_key, url_api, LATs, LONGs, dictCountry);
