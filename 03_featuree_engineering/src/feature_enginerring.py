@@ -80,8 +80,8 @@ class FEATURE_ENGINEERING:
     
     def get_document_vector(self, tokens, model):
         valid_vectors = [model.wv[word] for word in tokens if word in model.wv]
-        # if not valid_vectors:
-        #   return np.zeros(model.vector_size)
+        if not valid_vectors:
+          return np.zeros(model.vector_size);
         return np.mean(valid_vectors, axis=0);
 
     def GENERATE_UMAP_PLOT(self, model, model_name):
@@ -100,7 +100,8 @@ class FEATURE_ENGINEERING:
 def main():
     PATH = "03_featuree_engineering/data/csv/";
     DF_PREPROCESS = pd.read_csv(PATH+"ark_reviews_playstore_preprocess.csv");
-    DF_PREPROCESS = DF_PREPROCESS.dropna().reset_index().drop(columns=['index']);
+    DF_PREPROCESS['text_after'] = DF_PREPROCESS['text_after'].fillna(' ');
+    DF_PREPROCESS = DF_PREPROCESS.reset_index().drop(columns=['index']);
     FE = FEATURE_ENGINEERING(DF_PREPROCESS['text_after']);
 
     DF_OHE = FE.ONE_HOT_ENCODING();
