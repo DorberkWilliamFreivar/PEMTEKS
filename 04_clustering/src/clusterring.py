@@ -29,7 +29,7 @@ class CLUSTERING:
         plt.savefig(filename);
         plt.show();
 
-        hierarchical_cluster = AgglomerativeClustering(n_clusters=self.nclust, linkage='ward');
+        hierarchical_cluster = AgglomerativeClustering(n_clusters=4, linkage='ward');
         nth = hierarchical_cluster.fit(self.DF);
         labels = pd.Series(hierarchical_cluster.labels_);
         self.DF_PREPROCESS.insert(1, "Ward_label", labels);
@@ -111,7 +111,7 @@ def main():
     OHE_CLUST = CLUSTERING(BASEPATH, DF_ONEHOT, "OHE");
     TFIDF_CLUST = CLUSTERING(BASEPATH, DF_TFIDF, "TFIDF");
 
-    # OHE_CLUST.clusteringing();
-    TFIDF_CLUST.clusteringing();
+    OHE_CLUST.clusteringing();
+    # TFIDF_CLUST.clusteringing();
 
 main();
