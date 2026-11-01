@@ -1,5 +1,5 @@
 03_featuree_engineering/data/csv/*.csv
-04_clustering/data/csv/*.csv
+04_clustering/data/*.csv
 !03_featuree_engineering/data/csv/ark_reviews_playstore_preprocess.csv
 !03_featuree_engineering/data/csv/csv.zip
 03_featuree_engineering/models/reviews_ark.fasttext.wv.vectors_ngrams.npy
